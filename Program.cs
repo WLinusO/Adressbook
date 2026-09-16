@@ -68,23 +68,31 @@ class Program
 
             else if (answer == "2")
             {
-                foreach (Person p in profiles)
-                {
-                    Console.WriteLine($"Namn: {p.userName} Ålder: {p.age} ");
-                }
+                callPerson();
             }
 
             else if (answer == "3")
             {
-                for (int i = 0; i < profiles.Count; i++)
-                {
-                    Console.Write("Vilken profil vill du redigera?: ");
-                    Console.Write(profiles[i].userName + "\n");
+                Console.Write("Vilken profil vill du redigera?: ");
 
-                    int choice = int.Parse(Console.ReadLine());
+                callPerson();
+
+                int choice = int.Parse(Console.ReadLine());
+
+                Console.Write($"Vem vill du ersätta {profiles[choice].userName} med?: ");
+
+                profiles[choice].userName = Console.ReadLine();
+
+                Console.Write($"Hur gammal är {profiles[choice].userName}: ");
+
+                profiles[choice].age = int.Parse(Console.ReadLine());
 
 
-                }
+
+
+
+
+
 
             }
 
@@ -101,7 +109,13 @@ class Program
         }
 
 
-
+        static void callPerson()
+        {
+            foreach (Person p in profiles)
+            {
+                Console.WriteLine($"Namn: {p.userName} Ålder: {p.age} ");
+            }
+        }
 
 
 
