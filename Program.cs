@@ -54,7 +54,7 @@ class Program
 
             if (answer == "1")
             {
-
+                Console.Clear();
                 Person person = new Person();
 
                 Console.Write("Skriv ditt namn: ");
